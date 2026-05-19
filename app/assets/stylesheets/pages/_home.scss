@@ -1,5 +1,6 @@
 // Specific CSS for your home-page
 
+
   @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
 
   .bb-page {
@@ -10,7 +11,7 @@
     align-items: center;
     justify-content: center;
     padding: 3rem 1.5rem;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Syne Sans', sans-serif;
     position: relative;
     overflow: hidden;
   }
@@ -67,7 +68,7 @@
   }
 
   .bb-title {
-    font-family: 'Syne', sans-serif;
+    font-family: 'Syne Sans', sans-serif;
     font-size: clamp(3rem, 8vw, 5.5rem);
     font-weight: 800;
     color: #0f0a2a;
