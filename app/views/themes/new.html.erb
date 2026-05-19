@@ -1,9 +1,17 @@
 <p><%= link_to "<<back to home", root_path %></p>
-<div class="container">
-  <h1>Create a theme</h1>
-  <%= simple_form_for @theme do |f| %>
-    <%= f.input :name %>
-    <%= f.input :specs %>
-    <%= f.submit "Add", class: 'btn btn-success mt-3' %>
-  <% end %>
+
+<div class="container mt-4">
+  <div class="row justify-content-center g-4">
+
+    <div class="col-8">
+      <%# <div class="container"> %>
+        <h1>Create a theme</h1>
+        <%= simple_form_for @theme do |f| %>
+          <%= f.input :name %>
+          <%= f.input :specs %>
+          <%= f.submit "Add", class: 'btn btn-success mt-3' %>
+        <% end %>
+      <%# </div> %>
+    </div>
+  </div>
 </div>
