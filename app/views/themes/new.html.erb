@@ -1,0 +1,9 @@
+<p><%= link_to "<<back to home", root_path %></p>
+<div class="container">
+  <h1>Create a theme</h1>
+  <%= simple_form_for @theme do |f| %>
+    <%= f.input :name %>
+    <%= f.input :specs %>
+    <%= f.submit "Add", class: 'btn btn-success mt-3' %>
+  <% end %>
+</div>
