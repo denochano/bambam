@@ -1,3 +1,41 @@
-<div class="container">
-  <%= render 'elements/form', element: @element %>
+<div class="container mt-5" style="max-width: 1000px">
+  <h2 class="fw-bold mb-2">
+    <%= @theme.name %>
+  </h2>
+  <p>
+    <%= @theme.specs %>
+  </p>
+  <div class="container">
+    <%= render 'elements/form', element: @element %>
+  </div>
+  <br>
+  <h3 class="fw-bold mb-2">Elements</h3>
+  <hr>
+  <div class="container">
+    <% @theme.elements.each do |element| %>
+      <h4 class="fw-bold mb-2"><%= element.name %></h4>
+
+      <h5 class="fw-bold mt-3 mb-2">Element Preview</h5>
+      <style><%= element.css_code %></style>
+      <%= element.html_code.html_safe %>
+      <div class = "card m-3 p-3">
+        <ul class="nav tabs-underlined" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <span class="nav-link tab-underlined active" id="html-tab" data-bs-toggle="tab" data-bs-target="#html-tab-pane-<%= element.id %>" role="tab" aria-controls="html-tab-pane-<%= element.id %>" aria-selected="true">HTML</span>
+          </li>
+          <li class="nav-item" role="presentation">
+            <span class="nav-link tab-underlined" id="css-tab" data-bs-toggle="tab" data-bs-target="#css-tab-pane-<%= element.id %>" role="tab" aria-controls="css-tab-pane-<%= element.id %>" aria-selected="false">CSS</span>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade py-3 show active" id="html-tab-pane-<%= element.id %>" role="tabpanel" aria-labelledby="html-tab" tabindex="0">
+            <code><pre><%= element.html_code %></pre></code>
+          </div>
+          <div class="tab-pane fade py-3" id="css-tab-pane-<%= element.id %>" role="tabpanel" aria-labelledby="css-tab" tabindex="0">
+            <code><pre><%= element.css_code %></pre></code>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
