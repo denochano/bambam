@@ -1,1 +1,49 @@
-<p></p>
+<div class="container my-3" data-controller="collapse"
+>
+  <div class="border rounded">
+
+    <div class="d-flex justify-content-between align-items-center p-2 px-3"
+         style="cursor: pointer;"
+         data-bs-toggle="collapse"
+         data-bs-target="#createForm"
+         aria-expanded="false"
+         aria-controls="createForm">
+      <span id="createBoxLabel">Click to create an element</span>
+      <span id="createBoxChevron" style="display: inline-block; transition: transform 0.3s;">
+        <i class="bi bi-chevron-down"></i>
+      </span>
+    </div>
+
+    <div class="collapse" id="createForm">
+      <hr class="my-0">
+      <div class="p-3">
+        <%= simple_form_for [theme, element] do |f| %>
+          <%= f.input :name %>
+          <%= f.simple_fields_for :messages do |message_form| %>
+            <%= message_form.input :content %>
+            <%= message_form.input :role, as: :hidden, input_html: { value: "user"} %>
+          <% end %>
+          <%= f.submit 'Submit', class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  const formCollapse = document.getElementById('createForm');
+  const label = document.getElementById('createBoxLabel');
+  const chevron = document.getElementById('createBoxChevron');
+
+  formCollapse.addEventListener('show.bs.collapse', () => {
+    label.textContent = 'Click to hide';
+    chevron.style.transform = 'rotate(180deg)';
+  });
+
+  formCollapse.addEventListener('hide.bs.collapse', () => {
+    label.textContent = 'Click to create an element';
+    chevron.style.transform = 'rotate(0deg)';
+  });
+</script>

@@ -5,6 +5,8 @@ class ThemesController < ApplicationController
 
   def show
     @theme = Theme.find(params[:id])
+    @element = Element.new
+    @element.messages.build
   end
 
   def new
