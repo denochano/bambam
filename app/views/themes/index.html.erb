@@ -1,0 +1,43 @@
+
+  <div class="container mt-4">
+    <div class="row justify-content-center g-4">
+
+      <% @themes.each do |theme| %>
+
+        <div class="col-6 col-lg-4 col-xl-3">
+
+          <div class="card shadow-sm border-0 h-100">
+
+            <%= link_to theme_path(theme),
+            class: "text-decoration-none text-dark w-100" do %>
+
+              <%= image_tag "theme.webp",
+              class: "card-img-top",
+              style: "
+                height: 220px;
+                object-fit: cover;
+              " %>
+
+              <div class="card-body">
+
+                <h5 class="fw-bold mb-2">
+                  <%= theme.name %>
+                </h5>
+
+                <p class="text-muted mb-0">
+                  <%= truncate(theme.specs, length: 80) %>
+                </p>
+
+              </div>
+
+            <% end %>
+
+          </div>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
