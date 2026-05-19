@@ -1,1 +1,203 @@
 // Specific CSS for your home-page
+
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+  .bb-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff 0%, #f5f0ff 50%, #ede9fe 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    font-family: 'DM Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative blobs */
+  .bb-page::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, transparent 70%);
+    top: -120px;
+    right: -100px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .bb-page::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+    bottom: -100px;
+    left: -80px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .bb-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(99, 102, 241, 0.1);
+    color: #4f46e5;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    margin-bottom: 1.5rem;
+    animation: fadeDown 0.5s ease both;
+  }
+
+  .bb-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #4f46e5;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .bb-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 800;
+    color: #0f0a2a;
+    margin: 0 0 1rem;
+    letter-spacing: -2px;
+    line-height: 1;
+    animation: fadeDown 0.5s 0.1s ease both;
+  }
+
+  .bb-title span {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bb-subtitle {
+    font-size: 1.1rem;
+    color: #6b7280;
+    font-weight: 300;
+    margin: 0 0 3rem;
+    max-width: 380px;
+    text-align: center;
+    line-height: 1.7;
+    animation: fadeDown 0.5s 0.2s ease both;
+  }
+
+  .bb-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    animation: fadeDown 0.5s 0.3s ease both;
+  }
+
+  .bb-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.9rem 2rem;
+    background: #4f46e5;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px rgba(79, 70, 229, 0.3);
+  }
+
+  .bb-btn-primary:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(79, 70, 229, 0.4);
+  }
+
+  .bb-btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .bb-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.9rem 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    color: #4f46e5;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 14px;
+    border: 1.5px solid rgba(99, 102, 241, 0.35);
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: background 0.2s, transform 0.15s, border-color 0.2s;
+  }
+
+  .bb-btn-secondary:hover {
+    background: rgba(238, 242, 255, 0.95);
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+  }
+
+  .bb-btn-secondary:active {
+    transform: translateY(0);
+  }
+
+  /* Floating dots decoration */
+  .bb-dot {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+
+  .bb-dot-1 {
+    width: 10px; height: 10px;
+    background: #a78bfa;
+    top: 18%; left: 12%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .bb-dot-2 {
+    width: 6px; height: 6px;
+    background: #6366f1;
+    top: 30%; right: 15%;
+    animation: float 8s 1s ease-in-out infinite;
+  }
+
+  .bb-dot-3 {
+    width: 14px; height: 14px;
+    background: #c4b5fd;
+    bottom: 22%; left: 20%;
+    animation: float 7s 2s ease-in-out infinite;
+  }
+
+  .bb-dot-4 {
+    width: 8px; height: 8px;
+    background: #818cf8;
+    bottom: 30%; right: 18%;
+    animation: float 9s 0.5s ease-in-out infinite;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-10px); }
+  }
