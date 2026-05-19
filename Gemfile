@@ -75,3 +75,4 @@ end
 # custom gems
 gem "devise"
 gem "faker"
+gem "ruby_llm", "~> 1.15.0"
