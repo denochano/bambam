@@ -50,3 +50,50 @@
   .bb-btn-secondary:active {
     transform: translateY(0);
   }
+
+  .backhome-btn {
+  display: inline-flex;
+  margin: 1.5rem 0 0 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #ede9fe; /* light lavender */
+  color: #4b2091;      /* purple text */
+  align-items: center;
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(109, 40, 217, 0.08);
+  transition: all 0.2s ease;
+}
+
+.backhome-btn:hover {
+  background: #ddd6fe;
+  color: #5b21b6;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(109, 40, 217, 0.12);
+}
+
+.login-btn {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.55rem 1rem;
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: 'Syne Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  box-shadow: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.login-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  transform: translateY(-1px);
+}
