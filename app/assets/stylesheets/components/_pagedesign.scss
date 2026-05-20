@@ -1,0 +1,37 @@
+.bb-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff 0%, #f5f0ff 50%, #ede9fe 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    font-family: 'Syne Sans', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Decorative blobs */
+  .bb-page::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(167, 139, 250, 0.18) 0%, transparent 70%);
+    top: -120px;
+    right: -100px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .bb-page::after {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+    bottom: -100px;
+    left: -80px;
+    border-radius: 50%;
+    pointer-events: none;
+  }

@@ -1,17 +1,32 @@
-<p><%= link_to "<<back to home", root_path %></p>
+<p><%= link_to "Back to Home", root_path,  class: "nt-back-btn" %></p>
 
-<div class="container mt-4">
-  <div class="row justify-content-center g-4">
+<div class="bb-page">
 
-    <div class="col-8">
-      <%# <div class="container"> %>
-        <h1>Create a theme</h1>
-        <%= simple_form_for @theme do |f| %>
-          <%= f.input :name %>
-          <%= f.input :specs %>
-          <%= f.submit "Add", class: 'btn btn-success mt-3' %>
-        <% end %>
-      <%# </div> %>
+
+  <div class="nt-shell">
+    <div class="nt-intro">
+      <div class="bb-badge">Theme Studio</div>
+      <h1>Create a theme</h1>
+      <p>Name your idea, describe the look, and turn it to your reality!</p>
+    </div>
+
+    <div class="nt-card">
+      <%= simple_form_for @theme, html: { class: "nt-form" } do |f| %>
+        <%= f.input :name,
+                    label: "Theme name",
+                    placeholder: "Ideas",
+                    input_html: { class: "nt-input" },
+                    label_html: { class: "nt-label" } %>
+
+        <%= f.input :specs,
+                    label: "Theme specs",
+                    placeholder: "write some ideas...",
+                    as: :text,
+                    input_html: { class: "nt-input nt-textarea", rows: 6 },
+                    label_html: { class: "nt-label" } %>
+
+        <%= f.submit "Add Theme", class: "nt-submit" %>
+      <% end %>
     </div>
   </div>
 </div>
