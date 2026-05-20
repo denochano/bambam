@@ -1,7 +1,10 @@
 
   <div class="container mt-4">
+    <div class="d-flex justify-content-between mb-5">
+      <%= link_to "Go Back to Home Page", root_path, class:"bb-btn-secondary"%>
+      <%= link_to "Create New Theme", new_theme_path, class:"bb-btn-secondary"%>
+    </div>
     <div class="row justify-content-center g-4">
-
       <% @themes.each do |theme| %>
 
         <div class="col-6 col-lg-4 col-xl-3">

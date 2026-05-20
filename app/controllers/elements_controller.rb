@@ -11,6 +11,7 @@ class ElementsController < ApplicationController
   end
 
   def show
+    @element = Element.find(params[:id])
   end
 
   private
