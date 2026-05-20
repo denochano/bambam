@@ -17,7 +17,9 @@
 
       <h5 class="fw-bold mt-3 mb-2">Element Preview</h5>
       <style><%= element.css_code %></style>
-      <%= element.html_code.html_safe %>
+      <% if element.html_code.present? %>
+        <%= element.html_code.html_safe %>
+      <% end %>
       <div class = "card m-3 p-3">
         <ul class="nav tabs-underlined" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
