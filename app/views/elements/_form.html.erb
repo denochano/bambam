@@ -1,7 +1,5 @@
-<div class="container my-3" data-controller="collapse"
->
+<div class="container my-3" data-controller="collapse">
   <div class="border rounded">
-
     <div class="d-flex justify-content-between align-items-center p-2 px-3"
          style="cursor: pointer;"
          data-bs-toggle="collapse"
@@ -27,23 +25,5 @@
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
-
-
-<script>
-  const formCollapse = document.getElementById('createForm');
-  const label = document.getElementById('createBoxLabel');
-  const chevron = document.getElementById('createBoxChevron');
-
-  formCollapse.addEventListener('show.bs.collapse', () => {
-    label.textContent = 'Click to hide';
-    chevron.style.transform = 'rotate(180deg)';
-  });
-
-  formCollapse.addEventListener('hide.bs.collapse', () => {
-    label.textContent = 'Click to create an element';
-    chevron.style.transform = 'rotate(0deg)';
-  });
-</script>
