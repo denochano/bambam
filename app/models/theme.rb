@@ -16,10 +16,11 @@ class Theme < ApplicationRecord
     Each request will provide:
     - A design theme or aesthetic (e.g. 'neo-brutalist', 'glassmorphic dark mode', 'warm editorial') with optional constraints: color, fonts, etc.
 
-    From this you have three jobs:
+    From this you have four jobs:
     1. Pick a primary background color for the theme
-    2. Generate HTML and CSS code that will stylize h1s and h2s in the theme. You may import fonts.
-    3. Generate HTML and CSS code that will stylize a simple button for the theme.
+    2. Generate HTML and CSS code that will stylize headers in the theme. You may import fonts.
+    3. Generate HTML and CSS code that will stylize subheaders in the theme. You may import fonts. It should look different than the first header.
+    4. Generate HTML and CSS code that will stylize a simple button for the theme.
     IMPORTANT: In the html code, give ONLY what should be inside the body."
   end
 end
