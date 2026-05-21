@@ -1,9 +1,9 @@
 class CreateElementTool < RubyLLM::Tool
-  description "Use this tool when the user asks to create an element."
-  param :name, desc: "This is the name of the element"
+  description "Use this tool when the user asks to create an component."
+  param :name, desc: "This is the name of the component"
 
   param :html_code, desc: <<~TXT
-    Pure HTML markup for the element. Must contain only valid HTML tags and attributes — no
+    Pure HTML markup for the component. Must contain only valid HTML tags and attributes — no
     inline <style> tags, no <script> tags, and no external resource links. CSS classes and
     IDs may be used freely, as their styles will be defined separately in css_code. Do not
     wrap the output in a full HTML document (no <html>, <head>, or <body> tags) — return
@@ -11,9 +11,9 @@ class CreateElementTool < RubyLLM::Tool
   TXT
 
   param :css_code, desc: <<~TXT
-    Pure CSS rules for styling the element. Must contain only valid CSS — no <style> wrapper
-    tags, no JavaScript, and no HTML. All selectors should be scoped using the element's
-    name as a prefix or class to avoid conflicts (e.g. `.element-name .child`). Do not use
+    Pure CSS rules for styling the component. Must contain only valid CSS — no <style> wrapper
+    tags, no JavaScript, and no HTML. All selectors should be scoped using the component's
+    name as a prefix or class to avoid conflicts (e.g. `.component-name .child`). Do not use
     inline styles or !important unless absolutely necessary. External fonts or resources
     should be imported at the top using @import.
   TXT
