@@ -9,21 +9,20 @@
     - <%= @element.name %>
   </span>
 </h1>
-
   <hr>
     <div class="row p-5">
       <div class="col-6">
+        <h4 class="fw-bold mb-4"> Request Update </h4>
         <div class="card h-100 bg-white rounded">
           <div class="card-body">
-            <h4 class="fw-bold mb-4"> Update this element </h4>
-            <div id="messages" class="mb-4"> <%= render @messages %> </div> <!-- This line: automatically renders: messages/_message.html.erb-->
+            <div id="messages" class="mb-2"> <%= render @messages %> </div> <!-- This line: automatically renders: messages/_message.html.erb-->
             <div id="new_message"> <%= render "messages/form", element: @element, message: @message %></div>
           </div>
         </div>
       </div>
       <div class="col-6">
-        <h4 class="fw-bold mt-3 mb-2">Element Preview</h4>
-        <div class="card">
+        <h4 class="fw-bold mb-4">Preview</h4>
+        <div class="card border-0 d-flex align-items-center">
           <style><%= @element.css_code %></style>
           <% if @element.html_code.present? %>
             <%= @element.html_code.html_safe %>
