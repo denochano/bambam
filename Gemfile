@@ -76,3 +76,6 @@ end
 gem "devise"
 gem "faker"
 gem "ruby_llm", "~> 1.15.0"
+gem "kramdown"
+gem "rouge"
+gem "kramdown-parser-gfm"

@@ -9,7 +9,7 @@
   "
   style="max-width: 75%;">
 
-    <%= message.content %>
+    <%= raw(render_markdown(message.content)) %>
 
   </div>
 

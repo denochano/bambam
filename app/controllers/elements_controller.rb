@@ -4,7 +4,7 @@ class ElementsController < ApplicationController
   def create
     @theme = Theme.find(params[:theme_id])
     llm_element_creation
-    redirect_to element_path(@theme.elements.order(created_at: :desc).last)
+    redirect_to element_path(@theme.elements.order(created_at: :asc).last)
   end
 
   def show
