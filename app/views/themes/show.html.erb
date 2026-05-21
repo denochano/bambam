@@ -15,12 +15,13 @@
   <div class="container">
     <% @theme.elements.each do |element| %>
       <h4 class="fw-bold mb-2"><%= link_to element.name, element_path(element), class:"text-decoration-none text-dark" %></h4>
-
       <h5 class="fw-bold mt-3 mb-2">Element Preview</h5>
-      <style><%= element.css_code %></style>
-      <% if element.html_code.present? %>
-        <%= element.html_code.html_safe %>
-      <% end %>
+      <div class="card">
+        <style><%= element.css_code %></style>
+        <% if element.html_code.present? %>
+          <%= element.html_code.html_safe %>
+        <% end %>
+      </div>
       <div class = "card m-3 p-3">
         <ul class="nav tabs-underlined" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">

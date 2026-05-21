@@ -19,6 +19,8 @@ class ElementsController < ApplicationController
 
   def show
     @element = Element.find(params[:id])
+    @message = Message.new
+    @messages = @element.messages.order(:created_at)
   end
 
   private
