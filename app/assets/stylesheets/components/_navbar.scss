@@ -1,4 +1,3 @@
-
 .navbar-lewagon {
   justify-content: space-between;
   background: transparent;
@@ -16,30 +15,19 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand {
-  display: flex;
-  align-items: center;
-  margin-right: 0;
-  padding: 0;
-}
-
 .navbar-left {
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 3px 10px rgba(17, 24, 39, 0.08);
-}
-
 .navbar {
   border-bottom: none;
   box-shadow: none;
+}
+
+.navbar-brand-spacer {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
