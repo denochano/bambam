@@ -1,10 +1,6 @@
 
-  <div class="themes-index-page">
+  <div class="bb-page">
     <div class="container mt-4 themes-index-container">
-      <div class="themes-index-actions mb-5">
-        <%= link_to "Back to Home", root_path, class:"backhome-btn"%>
-        <%= link_to "Add a new Theme", new_theme_path, class:"bb-btn-primary bb-btn-small"%>
-      </div>
       <div class="row justify-content-center g-4">
         <% @themes.each do |theme| %>
 
