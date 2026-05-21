@@ -18,7 +18,8 @@ class Element < ApplicationRecord
     - The specific component to build (e.g. 'pricing card', 'navigation bar')
     - Optional component constraints: color, fonts, spacing scale, markup conventions
 
-    IMPORTANT: Output ONLY valid JSON. No explanations. No markdown. Response format: {'html_code': '...', 'css_code': '...'}
-    ALSO: In the html code, give ONLY what should be inside the body."
+    IMPORTANT: In the html code, give ONLY what should be inside the body."
   end
 end
+
+# IMPORTANT: Output ONLY valid JSON. No explanations. No markdown. Response format: {'html_code': '...', 'css_code': '...'}
