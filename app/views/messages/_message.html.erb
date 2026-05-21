@@ -1,0 +1,16 @@
+<div class="mb-3 d-flex <%= message.role == "user" ? "justify-content-end" : "justify-content-start" %>">
+
+  <div class="
+    px-3
+    py-2
+    rounded-4
+    shadow-sm
+    <%= message.role == "user" ? "bg-dark text-white" : "bg-light text-dark" %>
+  "
+  style="max-width: 75%;">
+
+    <%= message.content %>
+
+  </div>
+
+</div>
