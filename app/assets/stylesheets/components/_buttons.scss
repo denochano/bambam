@@ -74,6 +74,19 @@
   box-shadow: 0 6px 16px rgba(109, 40, 217, 0.12);
 }
 
+.bb-btn-small {
+  display: inline-flex;
+  margin: 1.5rem 0 0 1.5rem;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: #ddd6fe;
+  color: #8f63d7;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(109, 40, 217, 0.12);
+}
+
 .login-btn {
   display: inline-flex;
   align-items: center;
