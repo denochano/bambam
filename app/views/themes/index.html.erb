@@ -3,30 +3,33 @@
     <div class="container mt-4 themes-index-container">
       <div class="row justify-content-center g-4">
         <% @themes.each do |theme| %>
+          <div class="col-12 col-lg-6">
 
-          <div class="col-6 col-lg-4 col-xl-3">
-
-            <div class="card shadow-sm border-0 h-100">
+            <div class="card shadow-sm border-0 h-100" style="height: 50px; background-color: <%= theme.background %> ;">
 
               <%= link_to theme_path(theme),
               class: "text-decoration-none text-dark w-100" do %>
 
-                <%= image_tag "theme.webp",
-                class: "card-img-top",
-                style: "
-                  height: 220px;
-                  object-fit: cover;
-                " %>
-
                 <div class="card-body">
-
-                  <h5 class="fw-bold mb-2">
+                  <% if theme.elements.any? %>
+                    <% theme.elements.each do |element| %>
+                      <style>
+                        .theme-<%= theme.id %> {
+                          <%= element.css_code %>
+                        }
+                      </style>
+                    <% end %>
+                  <% end %>
+                  <div class="theme-<%= theme.id %>">
+                  <h5 class="fw-bold mb-2 header-1">
                     <%= theme.name %>
                   </h5>
-
-                  <p class="text-muted mb-0">
+                  </div>
+                  <div class="theme-<%= theme.id %>">
+                  <p class="text-muted mb-0 header-2">
                     <%= truncate(theme.specs, length: 80) %>
                   </p>
+                  </div>
 
                 </div>
 
