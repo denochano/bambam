@@ -1,29 +1,38 @@
-<div class="container my-3" data-controller="collapse">
-  <div class="border rounded">
-    <div class="d-flex justify-content-between align-items-center p-2 px-3"
-         style="cursor: pointer;"
-         data-bs-toggle="collapse"
-         data-bs-target="#createForm"
-         aria-expanded="false"
-         aria-controls="createForm">
-      <span id="createBoxLabel">Click to create an element</span>
-      <span id="createBoxChevron" style="display: inline-block; transition: transform 0.3s;">
-        <i class="bi bi-chevron-down"></i>
-      </span>
-    </div>
+<div data-controller="fab-form"
+     class="position-fixed bottom-0 end-0 p-4"
+     style="z-index: 1050;">
 
-    <div class="collapse" id="createForm">
-      <hr class="my-0">
-      <div class="p-3">
-        <%= simple_form_for [theme, element] do |f| %>
-          <%= f.input :name %>
-          <%= f.simple_fields_for :messages do |message_form| %>
-            <%= message_form.input :content %>
-            <%= message_form.input :role, as: :hidden, input_html: { value: "user"} %>
-          <% end %>
-          <%= f.submit 'Submit', class: 'btn btn-primary' %>
-        <% end %>
-      </div>
+  <%# Popup card — always in the DOM, just visually hidden %>
+  <div data-fab-form-target="popup" class="fab-popup card shadow-lg mb-3">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <span class="fw-semibold">Create an element</span>
+      <button type="button"
+              class="btn-close"
+              data-action="fab-form#toggle"
+              aria-label="Close">
+      </button>
     </div>
+    <div class="card-body">
+      <%= simple_form_for [theme, element] do |f| %>
+        <%= f.input :name %>
+        <%= f.simple_fields_for :messages do |message_form| %>
+          <%= message_form.input :content %>
+          <%= message_form.input :role, as: :hidden, input_html: { value: "user"} %>
+        <% end %>
+        <%= f.submit 'Submit', class: 'btn button-1' %>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Floating action button %>
+  <div class="d-flex justify-content-end">
+    <button type ="button"
+            data-fab-form-target="button"
+            data-action="fab-form#toggle"
+            class="btn button-1 fab-circle rounded-circle shadow d-flex align-items-center justify-content-center"
+            style="width: 52px; height: 52px;"
+            aria-label="Open form">
+      <i class="bi bi-plus-lg"></i>
+    </button>
   </div>
 </div>
