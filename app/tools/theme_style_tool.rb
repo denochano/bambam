@@ -55,7 +55,8 @@ class ThemeStyleTool < RubyLLM::Tool
     name as a prefix or class to avoid conflicts (e.g. `.element-name .child`). Do not use
     inline styles or !important unless absolutely necessary. External fonts or resources
     should be imported at the top using @import. The button may read the name of this theme
-    received in prompt. YOU MUST NAME THE CSS CLASS FOR THIS BUTTON "button-1".
+    received in prompt. YOU MUST NAME THE CSS CLASS FOR THIS BUTTON "button-1" THE TEXT IN THE
+    BUTTON MUST STAND OUT FROM THE BACKGROUND OF THE BUTTON.
   TXT
 
   param :theme_id, desc: "This is the ID of the theme which will be provided in the prompt"

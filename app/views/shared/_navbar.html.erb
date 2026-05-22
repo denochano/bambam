@@ -19,13 +19,13 @@
             <% unless current_page?(new_theme_path) %>
               <%= link_to "Create Theme",
                           new_theme_path,
-                          class: (show_page ? "button-1" : "bb-btn-primary") %>
+                          class: (show_page ? "button-1 text-decoration-none" : "bb-btn-primary") %>
             <% end %>
 
             <% unless current_page?(themes_path) %>
               <%= link_to "Return to Themes",
                           themes_path,
-                          class: (show_page ? "button-1" : "bb-btn-secondary bb-btn-small") %>
+                          class: (show_page ? "button-1 text-decoration-none" : "bb-btn-secondary bb-btn-small") %>
             <% end %>
           </li>
         </ul>

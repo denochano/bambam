@@ -8,51 +8,55 @@
   }
 </style>
 
-<div class="container mt-5" style="max-width: 1500px">
+<div class="container style="max-width: 1500px">
 
-      <h1 class="py-3 header-1">
-  <%= link_to "#{@element.theme.name} Theme",
-  theme_path(@element.theme),
-  class:"text-decoration-none" %>
+  <div class="d-flex align-items-center">
+    <h1 class="py-3 header-1 position-relative">
+      <i class="fa-solid fa-caret-left"></i> <%= @element.theme.name %>
+      <%= link_to "",
+      theme_path(@element.theme),
+      class:"header-link" %>
+    </h1>
 
-  <span class="h2 text-muted">
-    - <%= @element.name %>
-  </span>
-</h1>
+    <span class="header-2 ms-2">
+      <%= @element.name %>
+    </span>
+  </div>
+
   <hr>
     <div class="row p-5" style="background-color: color-mix(in srgb, <%= @element.theme.background %> 80%, white);">
       <div class="col-6">
-        <h4 class="fw-bold mb-4"> Request Update </h4>
-        <div class="card h-100 bg-white rounded">
-          <div class="card-body">
+        <h4 class="header-2 mb-4"> Request Update </h4>
+        <div class="card h-90 bg-white rounded">
+          <div class="card-body" style="background-color: <%= @element.theme.background %>">
             <div id="messages" class="mb-2"> <%= render @messages %> </div> <!-- This line: automatically renders: messages/_message.html.erb-->
             <div id="new_message"> <%= render "messages/form", element: @element, message: @message %></div>
           </div>
         </div>
       </div>
       <div class="col-6">
-        <h4 class="fw-bold mb-4">Preview</h4>
+        <h4 class="header-2 mb-4">Preview</h4>
         <div class="border-0 d-flex align-items-center">
           <style><%= @element.css_code %></style>
           <% if @element.html_code.present? %>
             <%= @element.html_code.html_safe %>
           <% end %>
         </div>
-        <div class = "card m-3 p-3">
+        <div class = "card m-3 p-3" style = "background-color: <%= @element.theme.background %>">
           <ul class="nav tabs-underlined" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <span class="nav-link tab-underlined active" id="html-tab" data-bs-toggle="tab" data-bs-target="#html-tab-pane-<%= @element.id %>" role="tab" aria-controls="html-tab-pane-<%= @element.id %>" aria-selected="true">HTML</span>
+              <span style="color: <%= @element.theme.header_color_code %>" class="nav-link tab-underlined active" id="html-tab" data-bs-toggle="tab" data-bs-target="#html-tab-pane-<%= @element.id %>" role="tab" aria-controls="html-tab-pane-<%= @element.id %>" aria-selected="true">HTML</span>
             </li>
             <li class="nav-item" role="presentation">
-              <span class="nav-link tab-underlined" id="css-tab" data-bs-toggle="tab" data-bs-target="#css-tab-pane-<%= @element.id %>" role="tab" aria-controls="css-tab-pane-<%= @element.id %>" aria-selected="false">CSS</span>
+              <span style="color: <%= @element.theme.header_color_code %>" class="nav-link tab-underlined" id="css-tab" data-bs-toggle="tab" data-bs-target="#css-tab-pane-<%= @element.id %>" role="tab" aria-controls="css-tab-pane-<%= @element.id %>" aria-selected="false">CSS</span>
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade py-3 show active" id="html-tab-pane-<%= @element.id %>" role="tabpanel" aria-labelledby="html-tab" tabindex="0">
-              <code><pre><%= @element.html_code %></pre></code>
+              <code style="color: <%= @element.theme.header_one_color_code %>;"><pre><%= @element.html_code %></pre></code>
             </div>
             <div class="tab-pane fade py-3" id="css-tab-pane-<%= @element.id %>" role="tabpanel" aria-labelledby="css-tab" tabindex="0">
-              <code><pre><%= @element.css_code %></pre></code>
+              <code style="color: <%= @element.theme.header_one_color_code %>;"><pre><%= @element.css_code %></pre></code>
             </div>
           </div>
         </div>
