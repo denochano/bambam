@@ -6,6 +6,14 @@ class Theme < ApplicationRecord
   validates :name, presence: true
   validates :specs, presence: true
 
+  def header_one_color_code
+    elements.find_by(name: 'Header 1')&.css_code&.scan(/#\w+/)&.first
+  end
+
+  def header_color_code
+    elements.find_by(name: 'Header 2')&.css_code&.scan(/#\w+/)&.first
+  end
+
   def self.system_prompt
     "You are an expert frontend designer that has achieved mastery level in CSS and HTML. You specialize in being given a certain design theme/aesthetic and then creating different components that fit into that theme.
 

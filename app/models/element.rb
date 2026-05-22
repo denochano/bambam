@@ -6,6 +6,10 @@ class Element < ApplicationRecord
 
   accepts_nested_attributes_for :messages, allow_destroy: true
 
+  def color_code
+    css_code.scan(/#\w+/)&.first || "#FFFFF"
+  end
+
   def self.system_prompt
     "You are an expert frontend designer that has achieved mastery level in CSS and HTML. You specialize in being given a certain design theme/aesthetic and then creating different components that fit into that theme.
 

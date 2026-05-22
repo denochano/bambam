@@ -17,8 +17,8 @@ class ThemeStyleTool < RubyLLM::Tool
     name as a prefix or class to avoid conflicts (e.g. `.element-name .child`). Do not use
     inline styles or !important unless absolutely necessary. External fonts or resources
     should be imported at the top using @import. YOU MUST NAME THE CSS CLASS FOR THIS HEADER
-    "header-1". YOU MUST MAKE THE HEADER AND ITS LETTERING STAND OUT AGAINST THE BACKGROUND
-    WITH A DIFFERENT COLOR.
+    "header-1". FOR THE HEADER DONT CREATE A DIV AROUND THE H1, APPLY ALL STYLE DIRECTLY TO THE HEADER
+    YOU MUST MAKE THE HEADER AND ITS LETTERING STAND OUT AGAINST THE HEX COLOR WITH A DIFFERENT COLOR.
   TXT
 
   param :second_text_html, desc: <<~TXT
@@ -36,8 +36,9 @@ class ThemeStyleTool < RubyLLM::Tool
     name as a prefix or class to avoid conflicts (e.g. `.element-name .child`). Do not use
     inline styles or !important unless absolutely necessary. External fonts or resources
     should be imported at the top using @import. DO NOT MAKE THIS HEADER ALL CAPS.
-    YOU MUST NAME THE CSS CLASS FOR THIS HEADER "header-2". YOU MUST MAKE THE HEADER STAND OUT
-    AGAINST THE BACKGROUND.
+    YOU MUST NAME THE CSS CLASS FOR THIS HEADER "header-2". FOR THE HEADER DONT CREATE A DIV AROUND
+    THE H1, APPLY ALL STYLE DIRECTLY TO THE HEADER YOU MUST MAKE THE HEADER AND ITS LETTERING STAND
+    OUT AGAINST THE HEX COLOR WITH A DIFFERENT COLOR.
   TXT
 
   param :button_html, desc: <<~TXT
