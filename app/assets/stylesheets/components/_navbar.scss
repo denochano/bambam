@@ -15,12 +15,6 @@
   flex-grow: 0;
 }
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
 .navbar {
   border-bottom: none;
   box-shadow: none;
@@ -30,4 +24,31 @@
   width: 40px;
   height: 40px;
   flex-shrink: 0;
+}
+
+.navbar-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-lewagon .backhome-btn,
+.navbar-lewagon .bb-btn-primary,
+.navbar-lewagon .bb-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0.55rem 1rem;
+  min-height: 38px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  border-radius: 10px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-lewagon .navbar-nav.ms-auto {
+  margin-left: 1.5rem !important;
 }
