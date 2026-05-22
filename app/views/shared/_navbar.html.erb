@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<% show_page = (controller_name == "themes" && action_name == "show") || (controller_name == "elements" && action_name == "show") %>
+<% login_page = controller_name == "sessions" && action_name == "new" %>
+<nav class="navbar navbar-expand-sm navbar-light navbar-lewagon <%= 'navbar-bb-bg' unless show_page %>">
   <div class="container-fluid">
     <div class="navbar-brand-spacer"></div>
 
@@ -7,10 +9,6 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <% show_page = (controller_name == "themes" && action_name == "show") || (controller_name == "elements" && action_name == "show") %>
-      <% login_page = controller_name == "sessions" && action_name == "new" %>
-
-
       <% unless current_page?(root_path) || login_page %>
         <ul class="navbar-nav me-auto">
           <li class="nav-item navbar-buttons">
@@ -37,7 +35,7 @@
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
             <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://gifdb.com/images/high/anime-girl-dancing-468-x-498-gif-z1dvx7te86jw4pi2.gif", class: "avatar", alt: "dropdown menu" %>
+              <%= image_tag "https://i.ytimg.com/vi/-lXjB1TfGKU/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBwsJK7ENY9gdRwX9w83iWNBGX5IA", class: "avatar", alt: "dropdown menu" %>
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
