@@ -18,7 +18,7 @@
     <br>
     <hr>
     <div class="container">
-      <% @theme.elements.each do |element| %>
+      <% @theme.elements.order(created_at: :asc).each do |element| %>
         <div class="element-card my-3 position-relative">
 
           <style><%= element.css_code %></style>
