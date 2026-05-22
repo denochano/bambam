@@ -1,3 +1,7 @@
+<% @element.theme.elements.each do |element| %>
+  <style><%= element.css_code %></style>
+<% end %>
+
 <div class="container mt-5" style="max-width: 1500px">
 
       <h1 class="fw-bold py-3">
@@ -10,7 +14,7 @@
   </span>
 </h1>
   <hr>
-    <div class="row p-5">
+    <div class="row p-5" style="background-color: color-mix(in srgb, <%= @element.theme.background %> 80%, white);">
       <div class="col-6">
         <h4 class="fw-bold mb-4"> Request Update </h4>
         <div class="card h-100 bg-white rounded">
@@ -22,7 +26,7 @@
       </div>
       <div class="col-6">
         <h4 class="fw-bold mb-4">Preview</h4>
-        <div class="card border-0 d-flex align-items-center">
+        <div class="border-0 d-flex align-items-center">
           <style><%= @element.css_code %></style>
           <% if @element.html_code.present? %>
             <%= @element.html_code.html_safe %>
