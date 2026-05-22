@@ -10,14 +10,20 @@
       <% unless current_page?(root_path) %>
         <ul class="navbar-nav me-auto">
           <li class="nav-item navbar-buttons">
-            <%= link_to "Home", root_path, class: "backhome-btn" %>
+            <% unless controller_name == "themes" && action_name == "show" %>
+              <%= link_to "Home", root_path, class: "backhome-btn" %>
+            <% end %>
 
             <% unless current_page?(new_theme_path) %>
-              <%= link_to "Create Theme", new_theme_path, class: "bb-btn-primary" %>
+              <%= link_to "Create Theme",
+                          new_theme_path,
+                          class: (controller_name == "themes" && action_name == "show" ? "button-1" : "bb-btn-primary") %>
             <% end %>
 
             <% unless current_page?(themes_path) %>
-              <%= link_to "Return to Themes", themes_path, class: "bb-btn-secondary bb-btn-small" %>
+              <%= link_to "Return to Themes",
+                          themes_path,
+                          class: (controller_name == "themes" && action_name == "show" ? "button-1" : "bb-btn-secondary bb-btn-small") %>
             <% end %>
           </li>
         </ul>
