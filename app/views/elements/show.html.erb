@@ -2,12 +2,18 @@
   <style><%= element.css_code %></style>
 <% end %>
 
+<style>
+  body {
+    background-color: <%= @element.theme.background %> !important
+  }
+</style>
+
 <div class="container mt-5" style="max-width: 1500px">
 
-      <h1 class="fw-bold py-3">
+      <h1 class="py-3 header-1">
   <%= link_to "#{@element.theme.name} Theme",
   theme_path(@element.theme),
-  class:"text-decoration-none text-dark" %>
+  class:"text-decoration-none" %>
 
   <span class="h2 text-muted">
     - <%= @element.name %>
