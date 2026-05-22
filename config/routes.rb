@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   resources :elements, only: [ :show ] do
     resources :messages, only: [ :create ]
   end
+  mount MissionControl::Jobs::Engine, at: "/jobs"
+
 end

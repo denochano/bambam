@@ -3,8 +3,9 @@ require "json"
 class ElementsController < ApplicationController
   def create
     @theme = Theme.find(params[:theme_id])
-    llm_element_creation
-    redirect_to element_path(@theme.elements.order(created_at: :asc).last)
+    # llm_element_creation
+    ElementBuildJob.perform_later(@theme, element_params[:messages_attributes]["0"][:content])
+    redirect_to theme_path(@theme), notice: "Creation of element in progress..."
   end
 
   def show
