@@ -4,11 +4,8 @@
   }
 </style>
 
-<%# class="themes-index-page" %>
-
-<div style="--theme-bg: <%= @theme.background %>;">
+<div class="mt-7" style="--theme-bg: <%= @theme.background %>;">
   <div class="container mt-5" style="max-width: 1000px">
-    <%= link_to "Return to Themes", themes_path, class:"button-1 mb-5"%>
     <h2 class="header-1">
       Welcome to <%= @theme.name %>
     </h2>
