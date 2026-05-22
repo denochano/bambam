@@ -34,6 +34,15 @@
               <li class="nav-item" role="presentation">
                 <span style="color: <%= @theme.header_color_code %>" class="nav-link tab-underlined" id="css-tab" data-bs-toggle="tab" data-bs-target="#css-tab-pane-<%= element.id %>" role="tab" aria-controls="css-tab-pane-<%= element.id %>" aria-selected="false">CSS</span>
               </li>
+
+              <li class="nav-item" role="presentation">
+                <span style="color: <%= @theme.header_color_code %>" class="nav-link tab-underlined" data-bs-toggle="tab" role="tab" aria-controls="css-tab-pane-<%= element.id %>" aria-selected="false">
+                  <%= link_to element_path(element), style: "color: #{@theme.header_color_code}", class: "text-decoration-none" do %>
+                    Edit <i class="fa-solid fa-up-right-from-square"></i>
+                  <% end %>
+
+                  </span>
+              </li>
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade py-3 show active" id="html-tab-pane-<%= element.id %>" role="tabpanel" aria-labelledby="html-tab" tabindex="0">
@@ -44,9 +53,6 @@
               </div>
             </div>
           </div>
-          <%= link_to element_path(element), class: "position-absolute bottom-0 end-0 m-3" do %>
-            <i class="fa-solid fa-pencil" style="color: #<%= @theme.header_color_code %>"></i>
-          <% end %>
         </div>
       <% end %>
     </div>
