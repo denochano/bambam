@@ -7,23 +7,27 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <% unless current_page?(root_path) %>
+      <% show_page = (controller_name == "themes" && action_name == "show") || (controller_name == "elements" && action_name == "show") %>
+      <% login_page = controller_name == "sessions" && action_name == "new" %>
+
+
+      <% unless current_page?(root_path) || login_page %>
         <ul class="navbar-nav me-auto">
           <li class="nav-item navbar-buttons">
-            <% unless controller_name == "themes" && action_name == "show" %>
+            <% unless show_page %>
               <%= link_to "Home", root_path, class: "backhome-btn" %>
             <% end %>
 
             <% unless current_page?(new_theme_path) %>
               <%= link_to "Create Theme",
                           new_theme_path,
-                          class: (controller_name == "themes" && action_name == "show" ? "button-1" : "bb-btn-primary") %>
+                          class: (show_page ? "button-1" : "bb-btn-primary") %>
             <% end %>
 
             <% unless current_page?(themes_path) %>
               <%= link_to "Return to Themes",
                           themes_path,
-                          class: (controller_name == "themes" && action_name == "show" ? "button-1" : "bb-btn-secondary bb-btn-small") %>
+                          class: (show_page ? "button-1" : "bb-btn-secondary bb-btn-small") %>
             <% end %>
           </li>
         </ul>
@@ -37,12 +41,10 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete }, class: "dropdown-item" %>
             </div>
           </li>
-        <% else %>
+        <% elsif !login_page %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "login-btn" %>
           </li>
